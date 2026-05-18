@@ -1,0 +1,27 @@
+classDiagram
+    Library --> Book
+    Library --> User
+    Library --> Loan
+    Loan "1" --> "1..*" Book
+    Loan "1" --> "1" User
+    class Library{
+        +str add_Book 
+        -str register_user
+        -str create_loan
+    }
+    class Book{
+        +str title
+        +str author
+        +bool state
+        +mark_as_unavailable()
+        +mark_as_available()
+    }
+    class User{
+        -str name
+        -str email
+    }
+    class Loan{
+        -str start_date
+        -str end_date
+        +close_loan()
+    }
